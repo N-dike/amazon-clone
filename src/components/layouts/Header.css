@@ -1,0 +1,156 @@
+.header {
+  height: 60px;
+  display: flex;
+  background-color: #131921;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-logo{
+  margin: 20px 20px 10px 10px!important;
+  height: 60%;
+  width: 100px;
+}
+.header-search {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  border-radius: 24px;
+}
+.search-input {
+  height: 20px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 10px;
+  border: none;
+  width: 100%;
+}
+.search-icon {
+  padding: 5px 15px 5px 10px;
+  height: 30px !important;
+  font-size: 20px;
+  font-weight: lighter;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #cd9042;
+}
+.header-flag{
+  width: 24px;
+  transform: scale(1.5);
+  position: relative;
+  display: inline-block;
+  height: 18px;
+  margin-top: 20px;
+  margin-left: 15px;
+  margin-right: 7px;
+  background-position: 0 -100px;
+}
+.header-nav, 
+.header-nav span {
+  display: flex;
+  justify-content: space-evenly;
+}
+.nav-optionsLogin,
+.nav-optionsOrder,
+.nav-optionsPrime{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 10px;
+  color: #fff;
+}
+
+.header__link:first-child {
+  width: 130px;
+}
+
+.header-link {
+  color: white;
+  text-decoration: none;
+}
+
+.navOption-1 {
+  font-size: 12px;
+}
+.navOption-2 {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.header-cart{
+    display: flex;
+    align-items: center; 
+    padding-left: 3px;
+    font-size: 30px;
+}
+.header-cart > a{
+  text-decoration: none;
+  color: #fff;
+}
+.cart-count{
+    height: 100%;
+    font-size: 20px;
+    top: 1px;
+}
+.header-bottom{
+  display: flex;
+  padding-top: 5px;
+  height: 40px;
+  color: white;
+  background-color: #232f3e;
+}
+.header-address{
+  display: flex;
+}
+.header-addressIcon{
+  vertical-align: middle;
+}
+.header-addressIcon > svg{
+  font-size: 2rem;
+}
+.bottom-nav{
+  display: flex;
+  flex: 1 1;
+  justify-content: center;
+  width: 100%;
+}
+
+.bottom-nav > span{
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+@media only screen and (max-width: 980px) {
+  .header-search{
+
+  }
+  .header-flag{
+    display: none;
+  }
+  .header-bottom{
+    flex-direction: column-reverse;
+    padding-top: 25px;
+    align-items: flex-start;
+    ;
+  }
+  .nav-optionsOrder,
+  .nav-optionsPrime{
+    display: none;
+  }
+  .bottom-nav{
+    text-align: left !important;
+    background-color: #131c27;
+    margin-top: 20px;
+    justify-content: flex-start;
+  padding-bottom: 10px;
+  }
+  .nav-optionsLoc{
+    padding-top: 5px;
+  }
+.headerBottom-app{
+  display: none;
+}
+}
