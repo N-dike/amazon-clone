@@ -52,4 +52,7 @@
   .payment-items{
     flex: 0.8;
   }
+  .payment-priceContainer{
+    margin-top: 25px;
+  }
   

@@ -1,5 +1,7 @@
 import React, { useEffect, useState }from 'react'
 import axios from "../../utils/axios"
+import {db} from "../../firebase.js"
+import { collection, doc, setDoc } from "firebase/firestore"; 
 import Header from "../layouts/Header"
 import CartProducts from '../CartProducts/CartProducts'
 import CurrencyFormat from 'react-currency-format'
@@ -13,9 +15,8 @@ function Payment() {
     const stripe = useStripe()
     const element = useElements()
     const navigate = useNavigate()
-
-
-    const [{cart, user}] = useStateValue()
+    
+    const [{cart, user}, dispatch] = useStateValue()
     const [error, setError] = useState(null)
     const [processing, setProcessing] = useState("")
     const [succeeded, setSucceeded] = useState(false)
@@ -32,11 +33,12 @@ function Payment() {
             url: `/payments/create?total=${getCartTotal(cart) * 100}`,
           });
           setClientSecret(response.data.clientSecret);
-          console.log("secret is -> ", clientSecret);
         };
     
         getClientSecret();
       }, [cart]);
+
+      console.log('the Secret is >>', clientSecret)
     
     const handleSubmit = async (event) =>{
         event.preventDefault()
@@ -44,12 +46,31 @@ function Payment() {
 
         const payload = await stripe.confirmCardPayment(clientSecret, {
             payment_method: {
-                card: element.getElement(CardElement),
-            },
-        }).then(({ paymentIntent }) => {
+                card: element.getElement(CardElement)
+            }
+        }).then (({ paymentIntent }) => {
+
+            const userRef = doc(db, "users", user?.uid, "orders", paymentIntent.id)
+            try {
+               setDoc( userRef
+              , {
+                cart: cart,
+                amount: paymentIntent.amount,
+                created: paymentIntent.created,
+                   }
+               )
+                console.log("Document written with ID: ", userRef.id);
+              } catch (e) {
+                console.error("Error adding document: ", e);
+              }
+            
             setSucceeded(true)
             setError(null)
             setProcessing(false)
+            
+            dispatch({
+                type: 'EMPTY_CART'
+            })
             navigate('/orders')
         })
     }

@@ -5,7 +5,7 @@ import { useStateValue } from '../../context/StateProvider'
 import'./Product.css'
 
 function Product ({ title, price, rating, image}) {
- const [{cart}, dispatch] = useStateValue()
+ const [ {cart}, dispatch ] = useStateValue()
  let halfRating =(rating - Math.floor(rating)) * 10
  let outline = 0;
  halfRating > 0 ? outline = (5 - Math.ceil(rating)) : outline = (5 - Math.floor(rating))
@@ -15,7 +15,7 @@ function Product ({ title, price, rating, image}) {
              type: 'ADD_TO_CART',
              payload: { title, price, rating, image }
          })
-         toast.info(`${title} added `)
+         toast(`${title} added worth \n $${price}`)
      }
 
     return (

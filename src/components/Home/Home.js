@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import { toast } from 'react-toastify'
+import { toast, ToastContainer } from 'react-toastify'
 import Header from '../layouts/Header'
 import Product from '../Product/Product'
 import './Home.css'
@@ -13,7 +13,9 @@ const Home = () => {
         <>
         <Header />
         <div className='home-container'>
-            
+            <div className="home-toastContainer">
+                <ToastContainer />
+            </div>
             <div className='home-sliderContainer'>
                 <div className='home-slides'>
                     <img alt='image0' className='home-IMG'src='https://images-eu.ssl-images-amazon.com/images/G/31/skillsstore/2020/August/Medh_Alexa_GW_3000x1200._CB405585145_.jpg'/>
@@ -46,7 +48,7 @@ const Home = () => {
                 <Product
                 id={123345}
                 title="Fifth Edition, The Ultimate Guide to SAT Grammar"
-                price={32.55}
+                price={32.99}
                 rating={4}
                 image="https://images-na.ssl-images-amazon.com/images/I/41V1mbmkfCL._SX384_BO1,204,203,200_.jpg"
                 />
@@ -149,17 +151,6 @@ function moveCorousal (counter, slides, len) {
     setTimeout(() => {
         moveCorousal(counter, slides, len);
     }, 5000)
-
-    parseInt(counter) % 5 === 0 ? (
-        setTimeout(() => {
-            toast.info(`meets added new product to cart`, {
-                position: "bottom-left"
-            });
-        }, 10500)
-    ) : (
-            setTimeout(() => {
-            }, 21000)
-        )
 }
 
 export default Home
