@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import Home from './components/Home/Home'
 import Cart from './components/Cart/Cart'
+import Footer from './components/layouts/Footer/Footer'
 import Payment from './components/Payment/Payment'
 import { BrowserRouter as Router, Routes, Route, } from "react-router-dom"
 import 'react-toastify/dist/ReactToastify.css';
@@ -42,6 +43,7 @@ const [{}, dispatch] = useStateValue()
       }/>
       <Route path="/orders" element={<Orders />}/>
        </Routes>
+       <Footer/>
     </div>
     </Router>
       );

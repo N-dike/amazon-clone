@@ -3,7 +3,7 @@ import './Header.css'
 import { FaSearch } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import{ MdOutlineShoppingCart, MdOutlineLocationOn } from 'react-icons/md'
-import { useStateValue } from '../../context/StateProvider'
+import { useStateValue } from '../../../context/StateProvider'
 import { getAuth, signOut } from 'firebase/auth'
 import { toast } from 'react-toastify'
 const Header = () => {
@@ -52,9 +52,12 @@ const Header = () => {
                 </div>
            
                 <div className='nav-optionsOrder'>
+                <Link to="/orders" className="header-link">
                 <span className='navOption-1'>Returns</span>  
                 <span className='navOption-2'>& Orders</span>
+                </Link>
                 </div>
+                
                 <div className='nav-optionsPrime'>
                 <span className='navOption-1'>Your</span> 
                  <span className='navOption-2'>Prime</span>

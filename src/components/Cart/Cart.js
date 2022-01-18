@@ -1,6 +1,6 @@
 import React from 'react'
 import CartProducts from '../CartProducts/CartProducts'
-import Header from '../layouts/Header'
+import Header from '../layouts/Header/Header'
 import { useStateValue } from '../../context/StateProvider'
 import FlipMove from 'react-flip-move'
 import './Cart.css'

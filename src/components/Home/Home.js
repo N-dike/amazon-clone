@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import { toast, ToastContainer } from 'react-toastify'
-import Header from '../layouts/Header'
+import Header from '../layouts/Header/Header'
 import Product from '../Product/Product'
 import './Home.css'
 const Home = () => {

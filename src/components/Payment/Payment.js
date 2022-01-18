@@ -2,7 +2,7 @@ import React, { useEffect, useState }from 'react'
 import axios from "../../utils/axios"
 import {db} from "../../firebase.js"
 import { collection, doc, setDoc } from "firebase/firestore"; 
-import Header from "../layouts/Header"
+import Header from "../layouts/Header/Header"
 import CartProducts from '../CartProducts/CartProducts'
 import CurrencyFormat from 'react-currency-format'
 import { Link, useNavigate } from 'react-router-dom'

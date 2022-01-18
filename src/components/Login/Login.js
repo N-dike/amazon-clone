@@ -1,7 +1,7 @@
 import './Login.css'
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
+import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword } from "firebase/auth"
 import { toast } from 'react-toastify'
 
 function Login() {
@@ -36,6 +36,22 @@ function Login() {
                 toast.error(`unable to register, please check your credentials`);
            console.warn(error.message)
         })
+    }
+    const googleAuth = (e) => {
+        e.preventDefault()
+        const provider = new GoogleAuthProvider()
+        const auth = getAuth();
+signInWithPopup(auth, provider)
+.then((result) =>{
+    toast.success(`Login Successful, redirecting to homepage`)
+    setTimeout(function () {navigate("/")}, 1000)
+})
+.catch(e => {
+    toast.error(`unable to login, please check your cridentials`)
+    setTimeout(function () {navigate("/login")}, 4000)
+    console.warn(e.message);
+})
+  
     }
     return (
         <div className="login">
@@ -74,10 +90,11 @@ function Login() {
 
                 <a
                     className="login-googleButton"
+                    onClick={googleAuth}
                 >
                     <img
                         className="login-googleIcon"
-                        src="https://elearnam.com/assets/frontend/elegant/images/gicon.png"
+                        src="images/GoogleSignInLight.png"
                         alt="google login" />
                 </a>
             </div>

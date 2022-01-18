@@ -1,7 +1,7 @@
 .login {
     display: flex;
     background-color: white;
-    height: 100vh;
+    height: 100%;
     flex-direction: column;
     align-items: center;
   }
@@ -12,6 +12,7 @@
     flex-direction: column;
     padding: 20px;
     border: 1px solid lightgray;
+    margin-bottom: 30px;
   }
   
   .login-logo {
@@ -66,11 +67,14 @@
   
   .login-googleIcon {
     text-align: center;
-    width: 30px;
+    width: 100%;
     object-fit: contain;
+    border-radius: 1px;
+    border-color: #000;
   }
   
   .login-googleButton {
     text-align: center;
+    cursor: pointer;
   }
   
