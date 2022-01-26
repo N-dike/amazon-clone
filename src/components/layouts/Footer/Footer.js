@@ -34,6 +34,8 @@ function Footer() {
             <li>Instagram</li>
           </ul>
         </div>
+        </div>
+        <div className="footer-verticalRow">
         <div className="footer-verticalCol">
           <div className="footer-verticalCol-Head">Make Money with Us</div>
           <ul>
@@ -56,7 +58,8 @@ function Footer() {
             <li>Help</li>
           </ul>
         </div>
-      </div>
+        </div>
+     
 
       <hr />
 
