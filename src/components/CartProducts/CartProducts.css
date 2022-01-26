@@ -47,4 +47,21 @@
     color: #f0c14b;
     margin-top: 20px;
   }
-  
+  @media only screen and (max-width: 980px) {
+    .checkout-image{
+      width:90px;
+      height:90px;
+    }
+    .checkout-title{
+      max-height: 12ch;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: 400;
+    }
+    .checkout-price{
+      font-size: 17px;
+    }
+    .checkout-rating{
+      font-size: 15px;
+    }
+  }

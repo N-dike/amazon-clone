@@ -2,7 +2,7 @@ import './Login.css'
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword } from "firebase/auth"
-import { toast } from 'react-toastify'
+import { toast, ToastContainer } from 'react-toastify'
 
 function Login() {
     const navigate = useNavigate()
@@ -20,6 +20,7 @@ function Login() {
         })
         .catch(error => { 
             toast.error(`unable to Login, please check your credentials`);
+            setTimeout(function () {navigate("/login")}, 1000)
        console.warn(error.message)
     })
     }
@@ -34,6 +35,7 @@ function Login() {
             })
             .catch(error => { 
                 toast.error(`unable to register, please check your credentials`);
+                setTimeout(function () {navigate("/login")}, 1000)
            console.warn(error.message)
         })
     }
@@ -48,13 +50,16 @@ signInWithPopup(auth, provider)
 })
 .catch(e => {
     toast.error(`unable to login, please check your cridentials`)
-    setTimeout(function () {navigate("/login")}, 4000)
+    setTimeout(function () {navigate("/login")}, 1000)
     console.warn(e.message);
 })
   
     }
     return (
         <div className="login">
+              <div className="home-toastContainer">
+                <ToastContainer />
+            </div>
              <Link to="/">
                 <img
                     className="login-logo"

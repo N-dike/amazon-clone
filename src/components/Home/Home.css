@@ -5,8 +5,7 @@
   width: 100%;
   margin: 0 auto;
   height: 40vh;
-  position: relative;
-  border-radius: 0.5rem;
+  overflow: hidden;
 }
 .home-slides{
   position: absolute;
@@ -43,8 +42,29 @@
   margin-bottom: 10px;
 }
 
-.home-products-4 > .product {
-  padding-bottom: 50px;
-}
 
+@media only screen and (max-width: 980px) {
+  .home-sliderContainer{
+    height: 10vh;
+  }
+ .home-IMG{
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: fit-content;
+  margin-bottom: 0;
+ }
+ .home-products{
+   overflow: hidden;
+   flex-direction: column;
+   margin: 0 0 10px 0;
+ }
+ .home-products-4{
+   overflow: auto;
+   flex-direction: row;
+ }
+  .home-products-4 > div{
+    margin-right: 10px;
+    min-width: 300px;
+  }
+}
 

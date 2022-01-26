@@ -4,7 +4,7 @@
     padding: 20px;
     background-color: white;
     height: max-content;
-  }
+   }
   
   .checkout-ad {
     width: 100%;
@@ -16,3 +16,9 @@
     padding: 10px;
     border-bottom: 1px solid lightgray;
   }
+
+@media only screen and (max-width: 980px){
+  .checkout{
+    flex-direction: column;
+  }
+}

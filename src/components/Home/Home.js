@@ -12,7 +12,7 @@ const Home = () => {
     return (
         <>
         <Header />
-        <div className='home-container'>
+         <div className='home-container'>
             <div className="home-toastContainer">
                 <ToastContainer />
             </div>

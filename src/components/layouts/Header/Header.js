@@ -84,15 +84,11 @@ const Header = () => {
           </div>
         </div>
         {/* Nav */}
-        <div className="bottom-nav">
-          <span>
-           
-              All Products
-            
-          </span>
+        <div id="nav-scroll" className="bottom-nav">
+          <span>All Products</span>
           <span>Mobile</span>
           <span>Best Sellers</span>
-          <span>Today's Deak</span>
+          <span>Today's Deals</span>
           <span>Prime</span>
           <span>Computers</span>
           <span>Pantry</span>

@@ -19,7 +19,8 @@ function Product ({ title, price, rating, image}) {
      }
 
     return (
-        <div className='product'>
+        
+        <div className='product' onClick={ window.innerWidth <= 980 ? addToCart : null}>
             <img src={image} alt={title}/>
             <div className='product-info'>
                 <p>{title}</p>
@@ -53,6 +54,7 @@ function Product ({ title, price, rating, image}) {
                 </div>
             </div>
             <button onClick={addToCart}>Add to Cart</button>
+            
         </div>
     )
 }
